@@ -1,7 +1,8 @@
-1. ninja.exe
+1. bin/ninja.exe
 (1)版本号: v1.12.1
 (2)下载地址：https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-win.zip
 
-2. gn.exe
+2. bin/gn.exe
 (1) 版本号:2025-05-15
-(2) 下载地址：从https://github.com/rhett-lee/gn/获取源码编译，编译日期：2025-05-15
+(2) 下载地址：从https://github.com/rhett-lee/gn/获取源码编译
+         编译日期：2025-05-15
