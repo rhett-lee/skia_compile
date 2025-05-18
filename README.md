@@ -19,6 +19,6 @@
 | [OpenKylin下编译skia.md](OpenKylin%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | OpenKylin  | LLVM/gcc |OpenKylin系统中使用LLVM或者gcc编译Skia源码的方法|
 | [OpenSuse下编译skia.md](OpenSuse%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | OpenSuse  | LLVM/gcc |OpenSuse系统中使用LLVM或者gcc编译Skia源码的方法|
 
-## 二、资源链接
+## 资源链接
 1. nim duilib界面库，点击访问：[nim duilib](https://github.com/rhett-lee/nim_duilib) 
 2. Skia的编译文档库，点击访问：[skia compile](https://github.com/rhett-lee/skia_compile) 
