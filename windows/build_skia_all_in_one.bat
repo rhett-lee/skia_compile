@@ -42,9 +42,17 @@ if exist "C:\LLVM\bin\clang++.exe" (
     exit /b 1
 )
 
-set retry_delay=10     ;# Wait 10 seconds instead of 5
+set retry_delay=10
 :retry_clone_skia
-git clone https://github.com/google/skia.git
+if not exist ".\skia" (
+    git clone https://github.com/google/skia.git
+) else (
+    cd ./skia
+    git stash
+    git checkout main
+    git pull
+    cd ..
+)
 if %errorlevel% neq 0 (
     timeout /t %retry_delay% >nul
     goto retry_clone_skia
@@ -56,7 +64,13 @@ if not exist ".\skia" (
 )
 
 :retry_clone_skia_compile
-git clone https://github.com/rhett-lee/skia_compile
+if not exist ".\skia_compile" (
+    git clone https://github.com/rhett-lee/skia_compile
+) else (
+    cd ./skia_compile        
+    git pull
+    cd ..
+)
 if %errorlevel% neq 0 (
     timeout /t %retry_delay% >nul
     goto retry_clone_skia_compile
