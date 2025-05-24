@@ -19,15 +19,6 @@ else
     which python3
 fi
 
-if ! command -v python &> /dev/null
-then
-    echo "- python not found!"
-    exit 1
-else
-    echo "python found at:"
-    which python
-fi
-
 if ! command -v gn &> /dev/null
 then
     echo "- gn not found!"
