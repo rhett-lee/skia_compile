@@ -19,15 +19,6 @@ if %errorlevel% equ 0 (
     exit /b 1
 )
 
-where python.exe >nul 2>&1
-if %errorlevel% equ 0 (
-    echo python.exe found at:  
-    where python.exe
-) else (
-    echo - python.exe not found in PATH
-    exit /b 1
-)
-
 :: flag
 set has_gcc=0
 set has_clang=0
