@@ -66,6 +66,7 @@ if [ "$has_gcc$has_clang" == "00" ]; then
     exit 1
 fi
 
+start_time=$(date +%s)
 retry_delay=10
 
 # Retry clone skia
@@ -159,4 +160,12 @@ else
 fi
 
 echo
-echo "finished."
+
+end_time=$(date +%s)
+duration=$((end_time - start_time))
+if (( duration >= 60 )); then
+    minutes=$((duration / 60))
+    echo "Execution completed in $minutes minute(s)"
+else
+    echo "Execution completed in $duration second(s)"
+fi
