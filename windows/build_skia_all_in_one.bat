@@ -34,6 +34,25 @@ if exist "C:\LLVM\bin\clang++.exe" (
 )
 
 set retry_delay=10
+
+:retry_clone_skia_compile
+if not exist ".\skia_compile" (
+    git clone https://github.com/rhett-lee/skia_compile
+) else (
+    cd ./skia_compile        
+    git pull
+    cd ..
+)
+if %errorlevel% neq 0 (
+    timeout /t %retry_delay% >nul
+    goto retry_clone_skia_compile
+)
+
+if not exist ".\skia_compile" (
+    echo clone retry_clone_skia_compile failed!
+    exit /b 1
+)
+
 :retry_clone_skia
 if not exist ".\skia" (
     git clone https://github.com/google/skia.git
@@ -54,26 +73,9 @@ if not exist ".\skia" (
     exit /b 1
 )
 
-:retry_clone_skia_compile
-if not exist ".\skia_compile" (
-    git clone https://github.com/rhett-lee/skia_compile
-) else (
-    cd ./skia_compile        
-    git pull
-    cd ..
-)
-if %errorlevel% neq 0 (
-    timeout /t %retry_delay% >nul
-    goto retry_clone_skia_compile
-)
-
-if not exist ".\skia_compile" (
-    echo clone retry_clone_skia_compile failed!
-    exit /b 1
-)
-
-if not exist ".\skia_compile\skia.2025-05-17.src.zip" (
-    echo ".\skia_compile\skia.2025-05-17.src.zip" not found!
+set SKIA_PATCH_SRC_ZIP=skia.2025-05-17.src.zip
+if not exist ".\skia_compile\%SKIA_PATCH_SRC_ZIP%" (
+    echo ".\skia_compile\%SKIA_PATCH_SRC_ZIP%" not found!
     exit /b 1
 )
 
@@ -85,9 +87,9 @@ if %errorlevel% neq 0 (
 )
 cd ..
 
-powershell -command "Expand-Archive -Path 'skia_compile\skia.2025-05-17.src.zip' -DestinationPath .\skia\ -Force"
+powershell -command "Expand-Archive -Path 'skia_compile\%SKIA_PATCH_SRC_ZIP%' -DestinationPath .\skia\ -Force"
 if %errorlevel% neq 0 (
-    echo ".\skia_compile\skia.2025-05-17.src.zip" Expand-Archive failed!
+    echo ".\skia_compile\%SKIA_PATCH_SRC_ZIP%" Expand-Archive failed!
     exit /b 1
 )
 

@@ -114,8 +114,9 @@ if [ ! -d "./skia_compile" ]; then
     exit 1
 fi
 
-if [ ! -f "./skia_compile/skia.2025-05-17.src.zip" ]; then
-    echo "./skia_compile/skia.2025-05-17.src.zip not found!"
+SKIA_PATCH_SRC_ZIP=skia.2025-05-17.src.zip
+if [ ! -f "./skia_compile/$SKIA_PATCH_SRC_ZIP" ]; then
+    echo "./skia_compile/$SKIA_PATCH_SRC_ZIP not found!"
     exit 1
 fi
 
@@ -127,9 +128,9 @@ if [ $? -ne 0 ]; then
 fi
 cd ..
 
-unzip -o skia_compile/skia.2025-05-17.src.zip -d ./skia/
+unzip -o skia_compile/$SKIA_PATCH_SRC_ZIP -d ./skia/
 if [ $? -ne 0 ]; then
-    echo "./skia_compile/skia.2025-05-17.src.zip unzip failed!"
+    echo "./skia_compile/$SKIA_PATCH_SRC_ZIP unzip failed!"
     exit 1
 fi
 
