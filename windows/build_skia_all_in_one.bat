@@ -39,9 +39,7 @@ set retry_delay=10
 if not exist ".\skia_compile" (
     git clone https://github.com/rhett-lee/skia_compile
 ) else (
-    cd ./skia_compile        
-    git pull
-    cd ..
+    git -C ./skia_compile pull
 )
 if %errorlevel% neq 0 (
     timeout /t %retry_delay% >nul
@@ -57,11 +55,9 @@ if not exist ".\skia_compile" (
 if not exist ".\skia" (
     git clone https://github.com/google/skia.git
 ) else (
-    cd ./skia
-    git stash
-    git checkout main
-    git pull
-    cd ..
+    git -C ./skia stash
+    git -C ./skia checkout main
+    git -C ./skia pull
 )
 if %errorlevel% neq 0 (
     timeout /t %retry_delay% >nul

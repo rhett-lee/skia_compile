@@ -73,11 +73,9 @@ clone_skia() {
     if [ ! -d "./skia" ]; then
         git clone https://github.com/google/skia.git
     else
-        cd ./skia
-        git stash
-        git checkout main
-        git pull
-        cd ..
+        git -C ./skia stash
+        git -C ./skia checkout main
+        git -C ./skia pull
     fi
     if [ $? -ne 0 ]; then
         sleep $retry_delay
@@ -97,9 +95,7 @@ clone_skia_compile() {
     if [ ! -d "./skia_compile" ]; then
         git clone https://github.com/rhett-lee/skia_compile.git
     else
-        cd ./skia_compile        
-        git pull
-        cd ..
+        git -C ./skia_compile pull
     fi
     if [ $? -ne 0 ]; then
         sleep $retry_delay
