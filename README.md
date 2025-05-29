@@ -18,6 +18,7 @@
 | [UbuntuKylin下编译skia.md](UbuntuKylin%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | UbuntuKylin  | LLVM/gcc |UbuntuKylin系统中使用LLVM或者gcc编译Skia源码的方法|
 | [OpenKylin下编译skia.md](OpenKylin%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | OpenKylin  | LLVM/gcc |OpenKylin系统中使用LLVM或者gcc编译Skia源码的方法|
 | [OpenSuse下编译skia.md](OpenSuse%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | OpenSuse  | LLVM/gcc |OpenSuse系统中使用LLVM或者gcc编译Skia源码的方法|
+| [macOS下编译skia.md](macOS%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | macOS  | clang/clang++ |macOS系统中使用clang/clang++编译Skia源码的方法|
 
 ## 资源链接
 1. nim duilib界面库，点击访问：[nim duilib](https://github.com/rhett-lee/nim_duilib) 
