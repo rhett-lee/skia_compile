@@ -1,4 +1,7 @@
 echo OFF
+set OLD_DIR=%CD%
+cd /d %~dp0
+echo %CD%
 
 echo Checking the necessary software
 where git.exe >nul 2>&1
@@ -37,9 +40,11 @@ if exist "%LLVM_ROOT%\bin\clang++.exe" (
 
 if not exist ".\skia_compile\.git" (
     if exist "..\..\skia_compile\.git" (
-        cd ..\..\
+        cd ..\..\        
     )
 )
+
+echo %CD%
 
 set retry_delay=10
 
@@ -111,6 +116,6 @@ cd skia
 .\bin\ninja.exe -C out/llvm.x86.debug
 cd ..
 
-cd %~dp0
+cd %OLD_DIR%
 echo.
 echo finished.

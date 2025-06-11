@@ -1,4 +1,7 @@
 echo OFF
+set OLD_DIR=%CD%
+cd /d %~dp0
+echo %CD%
 
 :: Checking the necessary software
 where git.exe >nul 2>&1
@@ -34,6 +37,14 @@ if %has_gcc%%has_clang% equ 00 (
     echo  - Clang/Clang++£¨LLVM£©not found in PATH
     exit /b 1
 )
+
+if not exist ".\skia_compile\.git" (
+    if exist "..\..\skia_compile\.git" (
+        cd ..\..\
+    )
+)
+
+echo %CD%
 
 set retry_delay=10
 :retry_clone_skia
@@ -122,5 +133,6 @@ if "%has_clang%"=="1" (
     cd ..
 )
 
+cd %OLD_DIR%
 echo.
 echo finished.
