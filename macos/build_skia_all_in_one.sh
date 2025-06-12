@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 cd "$SCRIPT_DIR"
 
 CPU_ARCH_STR=$(uname -m)
-if [ "$CPU_ARCH_STR" = "x86_64" ]; then
+if [ "$CPU_ARCH_STR" = "x86_64" ] || [ "$CPU_ARCH_STR" = "amd64" ]; then
     CPU_ARCH=x64
 elif [ "$CPU_ARCH_STR" = "aarch64" ] || [ "$CPU_ARCH_STR" = "arm64" ]; then
     CPU_ARCH=arm64
