@@ -53,10 +53,11 @@ git -C ./skia status
 ```
 
 ## 四、编译skia（编译器：LLVM）
-1. 进入skia源码目录：    
-\> `cd ~/develop/skia`
+1. 进入skia源码目录：
+```
+cd ~/develop/skia
+```
 确定fontconfig和freetype2头文件和库文件在下面的路径中
-
 ```
 /usr/local/include/freetype2 
 /usr/local/include
