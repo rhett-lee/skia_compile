@@ -33,8 +33,8 @@ where gcc >nul 2>&1 && where g++ >nul 2>&1 && set has_gcc=1
 where clang >nul 2>&1 && where clang++ >nul 2>&1 && set has_clang=1
 
 if %has_gcc%%has_clang% equ 00 (
-    echo  - GCC/G++£¨MinGW£©not found in PATH
-    echo  - Clang/Clang++£¨LLVM£©not found in PATH
+    echo  "GCC/G++ (MinGW) not found in PATH"
+    echo  "Clang/Clang++ (LLVM) not found in PATH"
     exit /b 1
 )
 
