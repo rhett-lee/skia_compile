@@ -1,5 +1,5 @@
 # FreeBSD系统中使用clang/clang++编译Skia源码的方法
- - 修改日期：2025-06-13
+ - 修改日期：2025-11-01
  - 操作系统：FreeBSD
  - 编译器：clang/clang++
  - 说明1：本文档介绍FreeBSD系统中使用clang/clang++编译Skia源码的方法
@@ -11,7 +11,8 @@
 ```
 sudo pkg install git unzip python3 cmake ninja gn llvm fontconfig freetype2
 ```
-## 二、如果只关心结果，直接用下列脚本一键完成所有操作，后续文档就不用再看了。
+## 二、使用脚本自动编译（推荐）
+该脚本自动完成相关源码下载和编译工作。    
 选定一个工作目录，创建一个脚本`build.sh`，将下面已经整理好脚本复制进去，保存文件。    
 然后在控制台，为脚本文件添加可执行权限，最后运行该脚本： 
 ```
@@ -30,20 +31,21 @@ chmod +x ./skia_compile/freebsd/build_skia_all_in_one.sh
 编译时如果获取skia_compile代码失败，可以多重试几次。    
 编译完成的库文件在工作目录的`skia/out`子目录中，按编译选项放在相应的子目录。    
 
-## 三、获取skia源码并更新修改代码
+## 三、手动编译过程
+### 第1步：获取skia源码并更新修改代码
 1. 获取skia源码：    
 ```
 #!/usr/bin/env bash
 cd ~/develop
 git clone https://github.com/google/skia.git
-git -C ./skia checkout 290495056ba5b737330ae7f2e6e722eeda9526f8
+git -C ./skia checkout c5cd862d6fa511be244f7c2db1fe05563ff8fc72
 ```
 2. 下载源码和文档，并更新skia的修改代码：    
 ```
 #!/usr/bin/env bash
 cd ~/develop
 git clone https://github.com/rhett-lee/skia_compile
-unzip -o ./skia_compile/skia.2025-06-06.src.zip -d ./skia/
+unzip -o ./skia_compile/skia.2025-11-01.src.zip -d ./skia/
 ``` 
 更新完成后，可以到skia目录中确认一下是否更新成功
 ```
@@ -52,7 +54,7 @@ cd ~/develop/
 git -C ./skia status
 ```
 
-## 四、编译skia（编译器：LLVM）
+### 第2步：编译skia（编译器：LLVM）
 1. 进入skia源码目录：
 ```
 cd ~/develop/skia
@@ -75,6 +77,6 @@ extra_cflags=[\"-DSK_DISABLE_LEGACY_PNG_WRITEBUFFER\", \"-I/usr/local/include/fr
  - `gn gen out/llvm.x64.release --args="target_cpu=\"x64\" ar=\"llvm-ar\" skia_enable_fontmgr_fontconfig=true skia_use_freetype=true extra_ldflags = [ \"-L/usr/local/lib\" ] cc=\"clang\" cxx=\"clang++\" is_trivial_abi=false is_official_build=true skia_use_libwebp_encode=false skia_use_libwebp_decode=false skia_use_libpng_encode=false skia_use_libpng_decode=false skia_use_zlib=false skia_use_libjpeg_turbo_encode=false skia_use_libjpeg_turbo_decode=false skia_enable_fontmgr_win_gdi=false skia_use_icu=false skia_use_expat=false skia_use_xps=false skia_enable_pdf=false skia_use_wuffs=false skia_enable_svg=true skia_use_expat=true skia_use_system_expat=false is_debug=false extra_cflags=[\"-DSK_DISABLE_LEGACY_PNG_WRITEBUFFER\", \"-I/usr/local/include/freetype2\", \"-I/usr/local/include\"]"`    
  - `ninja -C out/llvm.x64.release`
 
-## 六、资源链接
+## 四、资源链接
 1. Skia的编译文档库，点击访问：[skia compile](https://github.com/rhett-lee/skia_compile) 
 2. nim duilib的代码库，点击访问：[nim duilib](https://github.com/rhett-lee/nim_duilib) 
