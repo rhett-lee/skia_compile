@@ -82,14 +82,14 @@ if not exist ".\skia\.git" (
     exit /b 1
 )
 
-set SKIA_PATCH_SRC_ZIP=skia.2025-11-01.src.zip
+set SKIA_PATCH_SRC_ZIP=skia.2026-02-10.src.zip
 if not exist ".\skia_compile\%SKIA_PATCH_SRC_ZIP%" (
     echo ".\skia_compile\%SKIA_PATCH_SRC_ZIP%" not found!
     exit /b 1
 )
 
 cd skia
-git checkout c5cd862d6fa511be244f7c2db1fe05563ff8fc72
+git checkout 34aa71b8bee4648a442b7125680232d803374f19
 if %errorlevel% neq 0 (
     echo git checkout skia failed!
     exit /b 1

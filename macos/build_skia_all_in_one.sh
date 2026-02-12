@@ -131,14 +131,14 @@ if [ ! -d "./skia_compile/.git" ]; then
     exit 1
 fi
 
-SKIA_PATCH_SRC_ZIP=skia.2025-11-01.src.zip
+SKIA_PATCH_SRC_ZIP=skia.2026-02-10.src.zip
 if [ ! -f "./skia_compile/$SKIA_PATCH_SRC_ZIP" ]; then
     echo "./skia_compile/$SKIA_PATCH_SRC_ZIP not found!"
     exit 1
 fi
 
 cd skia
-git checkout c5cd862d6fa511be244f7c2db1fe05563ff8fc72
+git checkout 34aa71b8bee4648a442b7125680232d803374f19
 if [ $? -ne 0 ]; then
     echo "git checkout skia failed!"
     exit 1
