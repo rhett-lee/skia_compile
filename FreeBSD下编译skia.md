@@ -3,7 +3,7 @@
  - 操作系统：FreeBSD
  - 编译器：clang/clang++
  - 说明1：本文档介绍FreeBSD系统中使用clang/clang++编译Skia源码的方法
- - 说明2：该编译Skia源码的方法，是为了适配[nim duilib](https://github.com/rhett-lee/nim_duilib)项目使用Skia库，如果用于其他库使用，可能需要修改编译参数
+ - 说明2：该编译Skia源码的方法，是为了适配[nim_duilib](https://github.com/rhett-lee/nim_duilib)项目使用Skia库，如果用于其他库使用，可能需要修改编译参数
  - 说明3：获取skia源码后，需要更新部分源码（更新方法见后续文档），否则编译无法通过。（使用了三个第三方库：expat，freetype2，fontconfig）
  - 说明4：操作过程中，假设源码的根目录是`~/develop`目录，如果使用其他目录，可替换为实际的目录。
 
@@ -78,5 +78,7 @@ extra_cflags=[\"-DSK_DISABLE_LEGACY_PNG_WRITEBUFFER\", \"-I/usr/local/include/fr
  - `ninja -C out/llvm.x64.release`
 
 ## 四、资源链接
-1. Skia的编译文档库，点击访问：[skia compile](https://github.com/rhett-lee/skia_compile) 
-2. nim duilib的代码库，点击访问：[nim duilib](https://github.com/rhett-lee/nim_duilib) 
+1. Skia的编译文档库，如需获取最新版本的文档，请点击访问：[skia_compile](https://github.com/rhett-lee/skia_compile)     
+2. nim_duilib界面库的代码库，请点击访问：[nim_duilib](https://github.com/rhett-lee/nim_duilib)     
+nim_duilib 是一款基于C++开发的跨平台界面库，源于经典的 duilib 界面库并进行了深度优化与功能扩展，支持Windows/Linux/macOS/FreeBSD平台，支持的Linux系统包括OpenEuler、OpenKylin、UbuntuKylin、统信UOS、中科方德、Ubuntu、Fedora、Debian等，专注于简化桌面应用的高效开发。其设计融合了DirectUI理念，通过XML描述界面布局，实现视觉与逻辑的分离，显著提升开发灵活性与维护性。
+

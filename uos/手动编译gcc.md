@@ -27,5 +27,5 @@
 
 
 ## 七、资源链接
-1. Skia的编译文档库，点击访问：[skia compile](https://github.com/rhett-lee/skia_compile) 
-2. nim duilib的代码库，点击访问：[nim duilib](https://github.com/rhett-lee/nim_duilib) 
+1. Skia的编译文档库，点击访问：[skia_compile](https://github.com/rhett-lee/skia_compile) 
+2. nim_duilib的代码库，点击访问：[nim_duilib](https://github.com/rhett-lee/nim_duilib) 
