@@ -1,6 +1,6 @@
-# skia compile
+# skia_compile
 
-[skia_compile](https://github.com/rhett-lee/skia_compile) 是介绍各个平台下如何编译skia的文档库。该库中介绍的编译Skia源码的方法，是为了适配[nim duilib](https://github.com/rhett-lee/nim_duilib)项目使用Skia库，如果用于其他库使用，可能需要修改编译参数。
+[skia_compile](https://github.com/rhett-lee/skia_compile) 是介绍各个平台下如何编译skia的文档库。该库中介绍的编译Skia源码的方法，是为了适配[nim_duilib](https://github.com/rhett-lee/nim_duilib)项目使用Skia库，如果用于其他库使用，可能需要修改编译参数。
 
 ![GitHub](https://img.shields.io/badge/license-MIT-green.svg)
 
@@ -22,5 +22,5 @@
 | [FreeBSD下编译skia.md](FreeBSD%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | FreeBSD  | clang/clang++ |FreeBSD系统中使用clang/clang++编译Skia源码的方法|
 
 ## 资源链接
-1. nim duilib界面库，点击访问：[nim duilib](https://github.com/rhett-lee/nim_duilib) 
-2. Skia的编译文档库，点击访问：[skia compile](https://github.com/rhett-lee/skia_compile) 
+1. nim_duilib界面库，点击访问：[nim_duilib](https://github.com/rhett-lee/nim_duilib) 
+2. Skia的编译文档库，点击访问：[skia_compile](https://github.com/rhett-lee/skia_compile) 
