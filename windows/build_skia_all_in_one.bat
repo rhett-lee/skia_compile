@@ -7,16 +7,16 @@ setlocal enabledelayedexpansion
 
 REM ==============================================
 REM Visual Studio Version Detection Script
-REM Detects VS version and sets VS_VERSION (vs2026/vs2022) 
+REM Detects VS version and sets VS_VERSION
 REM ==============================================
 
 set "VSWHERE=%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
-set "VS_VERSION=vs2022"
+set "VS_VERSION=vs2019"
 set "MAJOR_VERSION=0"
 
 if exist "%VSWHERE%" (   
     REM Get latest VS installation version and path
-    for /f "delims=" %%v in ('"%VSWHERE%" -nologo -latest -products * -property installationVersion 2^>nul') do (
+    for /f "delims=" %%v in ('"%VSWHERE%" -nologo -version [15.0,17.0) -products * -property installationVersion 2^>nul') do (
         set "RAW_VERSION=%%v"
         REM Parse major version
         for /f "delims=." %%m in ("!RAW_VERSION!") do (
@@ -25,12 +25,13 @@ if exist "%VSWHERE%" (
     )
     
     REM Determine VS version based on major version
-    if !MAJOR_VERSION! GEQ 18 (
-        set "VS_VERSION=vs2026"
-    ) else if !MAJOR_VERSION! GEQ 17 (
-        set "VS_VERSION=vs2022"
+    if !MAJOR_VERSION! GEQ 15 (
+        set "VS_VERSION=vs2017"
+    ) else if !MAJOR_VERSION! GEQ 16 (
+        set "VS_VERSION=vs2019"
     ) else (
         echo [WARNING] Unknown VS version: !RAW_VERSION!
+        exit /b 1
     )
 )
 
@@ -100,6 +101,14 @@ if %errorlevel% neq 0 (
 if not exist ".\skia_compile\.git" (
     echo clone retry_clone_skia_compile failed!
     exit /b 1
+)
+
+:retry_pull_skia_compile
+git -C ./skia_compile checkout develop-cpp17
+git -C ./skia_compile pull
+if %errorlevel% neq 0 (
+    timeout /t %retry_delay% >nul
+    goto retry_pull_skia_compile
 )
 
 :retry_clone_skia
