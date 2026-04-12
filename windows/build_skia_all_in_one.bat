@@ -16,7 +16,7 @@ set "MAJOR_VERSION=0"
 
 if exist "%VSWHERE%" (   
     REM Get latest VS installation version and path
-    for /f "delims=" %%v in ('"%VSWHERE%" -nologo -version [15.0,17.0) -products * -property installationVersion 2^>nul') do (
+    for /f "delims=" %%v in ('"%VSWHERE%" -nologo -latest -products * -property installationVersion 2^>nul') do (
         set "RAW_VERSION=%%v"
         REM Parse major version
         for /f "delims=." %%m in ("!RAW_VERSION!") do (
