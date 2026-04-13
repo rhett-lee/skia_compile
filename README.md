@@ -7,7 +7,7 @@
 ## 文档列表
 | 文档名称                  | 操作系统 | 编译器      |内容简介 |
 | :---                      | :---     | :---        | :---    |
-| [Windows下编译skia.md](Windows%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | Windows  | LLVM/VS2022 |Windows系统中使用LLVM或Visual Studio 2022编译Skia源码的方法|
+| [Windows下编译skia.md](Windows%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | Windows  | LLVM/VS2017/VS2019/VS2022/VS2026 |Windows系统中使用LLVM或Visual Studio 2022/2026编译Skia源码的方法（主分支）<br> 如果使用VS2017/VS2019，请使用develop-cpp17分支，主分支不支持VS2017/VS2019|
 | [mingw64_compile_skia.md](mingw64_compile_skia.md)                | Windows  | MinGW-W64(gcc/g++或LLVM) |Windows系统中使用MinGW-W64(gcc/g++或LLVM)编译Skia源码的方法|
 | [OpenEuler下编译skia.md](OpenEuler%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | OpenEuler  | LLVM/gcc |OpenEuler系统中使用LLVM或者gcc编译Skia源码的方法|
 | [Ubuntu下编译skia.md](Ubuntu%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | Ubuntu  | LLVM/gcc |Ubuntu系统中使用LLVM或者gcc编译Skia源码的方法|
