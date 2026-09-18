@@ -131,7 +131,7 @@ if [ ! -d "./skia_compile/.git" ]; then
     exit 1
 fi
 
-SKIA_PATCH_SRC_ZIP=skia. 2026-09-16.src.zip
+SKIA_PATCH_SRC_ZIP=skia.2026-09-16.src.zip
 if [ ! -f "./skia_compile/$SKIA_PATCH_SRC_ZIP" ]; then
     echo "./skia_compile/$SKIA_PATCH_SRC_ZIP not found!"
     exit 1
