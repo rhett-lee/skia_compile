@@ -1,5 +1,5 @@
 # FreeBSD系统中使用clang/clang++编译Skia源码的方法
- - 修改日期：2026-02-10
+ - 修改日期：2026-09-16
  - 操作系统：FreeBSD
  - 编译器：clang/clang++
  - 说明1：本文档介绍FreeBSD系统中使用clang/clang++编译Skia源码的方法
@@ -38,14 +38,14 @@ chmod +x ./skia_compile/freebsd/build_skia_all_in_one.sh
 #!/usr/bin/env bash
 cd ~/develop
 git clone https://github.com/google/skia.git
-git -C ./skia checkout 34aa71b8bee4648a442b7125680232d803374f19
+git -C ./skia checkout 6f559bafbed4c8323a899df4008aa073df4eccc6
 ```
 2. 下载源码和文档，并更新skia的修改代码：    
 ```
 #!/usr/bin/env bash
 cd ~/develop
 git clone https://github.com/rhett-lee/skia_compile
-unzip -o ./skia_compile/skia.2026-02-10.src.zip -d ./skia/
+unzip -o ./skia_compile/skia.2026-09-16.src.zip -d ./skia/
 ``` 
 更新完成后，可以到skia目录中确认一下是否更新成功
 ```
@@ -71,10 +71,10 @@ extra_ldflags = [ \"-L/usr/local/lib\" ]
 extra_cflags=[\"-DSK_DISABLE_LEGACY_PNG_WRITEBUFFER\", \"-I/usr/local/include/freetype2\", \"-I/usr/local/include\"]
 ```
 2. 编译skia静态库（llvm.arm64.Release）
- - `gn gen out/llvm.arm64.release --args="target_cpu=\"arm64\" ar=\"llvm-ar\" skia_enable_fontmgr_fontconfig=true skia_use_freetype=true extra_ldflags = [ \"-L/usr/local/lib\" ] cc=\"clang\" cxx=\"clang++\" is_trivial_abi=false is_official_build=true skia_use_libwebp_encode=false skia_use_libwebp_decode=false skia_use_libpng_encode=false skia_use_libpng_decode=false skia_use_zlib=false skia_use_libjpeg_turbo_encode=false skia_use_libjpeg_turbo_decode=false skia_enable_fontmgr_win_gdi=false skia_use_icu=false skia_use_expat=false skia_use_xps=false skia_enable_pdf=false skia_use_wuffs=false skia_enable_svg=true skia_use_expat=true skia_use_system_expat=false is_debug=false extra_cflags=[\"-DSK_DISABLE_LEGACY_PNG_WRITEBUFFER\", \"-I/usr/local/include/freetype2\", \"-I/usr/local/include\"]"`    
+ - `gn gen out/llvm.arm64.release --args="target_cpu=\"arm64\" ar=\"llvm-ar\" skia_enable_fontmgr_fontconfig=true skia_use_freetype=true extra_ldflags = [ \"-L/usr/local/lib\" ] cc=\"clang\" cxx=\"clang++\" is_trivial_abi=false is_official_build=true skia_use_libwebp_encode=false skia_use_libwebp_decode=false skia_use_libpng_encode=false skia_use_libpng_decode=false skia_use_zlib=false skia_use_libjpeg_turbo_encode=false skia_use_libjpeg_turbo_decode=false skia_enable_fontmgr_win_gdi=false skia_use_icu=false skia_use_expat=false skia_use_xps=false skia_enable_pdf=false skia_use_wuffs=false skia_enable_svg=true skia_use_expat=true skia_use_system_expat=false skia_use_partition_alloc=false is_debug=false extra_cflags=[\"-DSK_DISABLE_LEGACY_PNG_WRITEBUFFER\", \"-I/usr/local/include/freetype2\", \"-I/usr/local/include\"]"`    
  - `ninja -C out/llvm.arm64.release`
 3. 编译skia静态库（llvm.x64.Release）
- - `gn gen out/llvm.x64.release --args="target_cpu=\"x64\" ar=\"llvm-ar\" skia_enable_fontmgr_fontconfig=true skia_use_freetype=true extra_ldflags = [ \"-L/usr/local/lib\" ] cc=\"clang\" cxx=\"clang++\" is_trivial_abi=false is_official_build=true skia_use_libwebp_encode=false skia_use_libwebp_decode=false skia_use_libpng_encode=false skia_use_libpng_decode=false skia_use_zlib=false skia_use_libjpeg_turbo_encode=false skia_use_libjpeg_turbo_decode=false skia_enable_fontmgr_win_gdi=false skia_use_icu=false skia_use_expat=false skia_use_xps=false skia_enable_pdf=false skia_use_wuffs=false skia_enable_svg=true skia_use_expat=true skia_use_system_expat=false is_debug=false extra_cflags=[\"-DSK_DISABLE_LEGACY_PNG_WRITEBUFFER\", \"-I/usr/local/include/freetype2\", \"-I/usr/local/include\"]"`    
+ - `gn gen out/llvm.x64.release --args="target_cpu=\"x64\" ar=\"llvm-ar\" skia_enable_fontmgr_fontconfig=true skia_use_freetype=true extra_ldflags = [ \"-L/usr/local/lib\" ] cc=\"clang\" cxx=\"clang++\" is_trivial_abi=false is_official_build=true skia_use_libwebp_encode=false skia_use_libwebp_decode=false skia_use_libpng_encode=false skia_use_libpng_decode=false skia_use_zlib=false skia_use_libjpeg_turbo_encode=false skia_use_libjpeg_turbo_decode=false skia_enable_fontmgr_win_gdi=false skia_use_icu=false skia_use_expat=false skia_use_xps=false skia_enable_pdf=false skia_use_wuffs=false skia_enable_svg=true skia_use_expat=true skia_use_system_expat=false skia_use_partition_alloc=false is_debug=false extra_cflags=[\"-DSK_DISABLE_LEGACY_PNG_WRITEBUFFER\", \"-I/usr/local/include/freetype2\", \"-I/usr/local/include\"]"`    
  - `ninja -C out/llvm.x64.release`
 
 ## 四、资源链接
