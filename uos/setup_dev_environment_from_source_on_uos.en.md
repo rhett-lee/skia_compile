@@ -7,8 +7,8 @@ Last synced: 2026-09-28
  - Operating system: UOS Desktop Professional AMD64 (1070 HWE edition)
 
 ## 1. Preparation: Install Required Software
-1. After installing the system, you can upgrade it to the latest:
-   (1) Upgrade the system: `sudo apt update`
+1. After installing the system, you can upgrade it to the latest:    
+   (1) Upgrade the system: `sudo apt update`    
    (2) Upgrade the system: `sudo apt upgrade -y`
 2. Install the required software
 ```
@@ -27,13 +27,13 @@ python3 is already the newest version (3.7.3.1-deepin1).
 unzip is already the newest version (6.0.7.2-1+deepin+sign).
 wget is already the newest version (1.20.1.6-deepin1).
 ```
-Note: the development tool versions provided by the system by default are too old. When they cannot meet requirements, you must build the latest versions of the development tools from source, including binutils, python3, gcc/g++, llvm/clang/clang++, gn, and so on.
+Note: the development tool versions provided by the system by default are too old. When they cannot meet requirements, you must build the latest versions of the development tools from source, including binutils, python3, gcc/g++, llvm/clang/clang++, gn, and so on.    
 
 # 2. Manually Compile and Install the Development Environment from Source
-Minimum memory requirement: 16 GB; the build fails if memory is insufficient.
-Disk space requirement: around 35 GB.
+Minimum memory requirement: 16 GB; the build fails if memory is insufficient.    
+Disk space requirement: around 35 GB.    
 
-1. Compile and install the latest binutils (the system-bundled version is too old; linking gcc/g++/llvm/clang/clang++ with ld/gold causes errors)
+1. Compile and install the latest binutils (the system-bundled version is too old; linking gcc/g++/llvm/clang/clang++ with ld/gold causes errors)      
 ```
 #!/bin/bash
 cd ~/develop; mkdir src                                  # create source directory
@@ -47,7 +47,7 @@ make                                                         # build
 make install                                                 # install
 
 ```
-2. Compile and install a newer python3 (3.13.0) from source, because the system-bundled version (3.7.3) is too old to compile llvm and must be upgraded
+2. Compile and install a newer python3 (3.13.0) from source, because the system-bundled version (3.7.3) is too old to compile llvm and must be upgraded    
 ```
 #!/bin/bash
 cd ~/develop/src                                                # set working directory
@@ -80,7 +80,7 @@ export LD="~/develop/install/binutils-2.43.1/bin/ld"
 make -j 12                                                      # build: parallel build; the -j value can follow the actual number of CPU cores
 make install                                     # install; install prefix: ~/develop/install/gcc-14.2.0
 ```
-After compilation and installation, set the environment variables so the new gcc/g++ become available (put the following content in the `/home/develop/source.sh` file for convenience; use it with: `source ~/develop/source.sh`):
+After compilation and installation, set the environment variables so the new gcc/g++ become available (put the following content in the `/home/develop/source.sh` file for convenience; use it with: `source ~/develop/source.sh`):    
 ```
 #!/bin/bash
 # python3 
@@ -95,7 +95,7 @@ export LD_LIBRARY_PATH=~/develop/install/gcc-14.2.0/lib64/:$LD_LIBRARY_PATH
 export C_INCLUDE_PATH=~/develop/install/gcc-14.2.0/include/c++/14.2.0/:~/develop/install/gcc-14.2.0/include/c++/14.2.0/x86_64-pc-linux-gnu/:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=~/develop/install/gcc-14.2.0/include/c++/14.2.0/:~/develop/install/gcc-14.2.0/include/c++/14.2.0/x86_64-pc-linux-gnu/:$CPLUS_INCLUDE_PATH
 ```
-4. Compile and install a newer llvm/clang/clang++ (19.1.3) from source, because the system-bundled version is too old and must be upgraded
+4. Compile and install a newer llvm/clang/clang++ (19.1.3) from source, because the system-bundled version is too old and must be upgraded    
 ```
 #!/bin/bash
 # Build requirements: 16GB RAM
@@ -117,7 +117,7 @@ ninja -C ./llvm-project-llvmorg-19.1.3.build                                    
 ninja -C ./llvm-project-llvmorg-19.1.3.build install           # install; install prefix: ~/develop/install/LLVM-19.1.3
 
 ```
-Set the environment variables so the new llvm/clang/clang++ become available (put the following content in the `/home/develop/source.sh` file for convenience; use it with: `source ~/develop/source.sh`):
+Set the environment variables so the new llvm/clang/clang++ become available (put the following content in the `/home/develop/source.sh` file for convenience; use it with: `source ~/develop/source.sh`):    
 ```
 #!/bin/bash
 # python3 
@@ -138,7 +138,7 @@ export LD_LIBRARY_PATH=~/develop/install/LLVM-19.1.3/lib/:$LD_LIBRARY_PATH
 export C_INCLUDE_PATH=~/develop/install/LLVM-19.1.3/include/:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=~/develop/install/LLVM-19.1.3/include/:$CPLUS_INCLUDE_PATH
 ```
-5. Compile and install gn from source (no system-bundled gn was found, so build it from source):
+5. Compile and install gn from source (no system-bundled gn was found, so build it from source):    
 ```
 #!/bin/bash
 cd ~/develop/src                            # set working directory
@@ -148,7 +148,7 @@ source ~/develop/source.sh                  # use the latest gcc/g++
 export CXX=g++; python3 build/gen.py            # generate build configuration
 ninja -C out                                    # build source
 ```
-Set the environment variables so gn becomes available (put the following content in the `/home/develop/source.sh` file for convenience; use it with: `source ~/develop/source.sh`):
+Set the environment variables so gn becomes available (put the following content in the `/home/develop/source.sh` file for convenience; use it with: `source ~/develop/source.sh`):    
 ```
 #!/bin/bash
 # python3 
