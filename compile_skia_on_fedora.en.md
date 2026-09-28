@@ -23,24 +23,24 @@ sudo dnf install -y gcc g++ gdb make git ninja-build gn python cmake \
 ```
 The installed software versions are as follows:
 ```
-软件包 gcc-14.2.1-3.fc40.x86_64 已安装。
-软件包 gcc-c++-14.2.1-3.fc40.x86_64 已安装。
-软件包 gdb-16.2-1.fc40.x86_64 已安装。
-软件包 make-1:4.4.1-6.fc40.x86_64 已安装。
-软件包 git-2.49.0-1.fc40.x86_64 已安装。
-软件包 ninja-build-1.12.1-1.fc40.x86_64 已安装。
-软件包 gn-2234^20250502git487f8353f154-1.fc40.x86_64 已安装。
-软件包 python-unversioned-command-3.12.10-2.fc40.noarch 已安装。
-软件包 cmake-3.30.8-1.fc40.x86_64 已安装。
-软件包 llvm-18.1.8-4.fc40.x86_64 已安装。
-软件包 clang-18.1.8-2.fc40.x86_64 已安装。
-软件包 unzip-6.0-63.fc40.x86_64 已安装。
-软件包 fontconfig-devel-2.15.0-6.fc40.x86_64 已安装。
-软件包 mesa-libGL-devel-24.1.7-1.fc40.x86_64 已安装。
-软件包 mesa-libGLU-devel-9.0.3-4.fc40.x86_64 已安装。
-软件包 libglvnd-devel-1:1.7.0-4.fc40.x86_64 已安装。
-软件包 mesa-libEGL-devel-24.1.7-1.fc40.x86_64 已安装。
-软件包 vulkan-loader-devel-1.3.296.0-1.fc40.x86_64 已安装。
+Package gcc-14.2.1-3.fc40.x86_64 is already installed.
+Package gcc-c++-14.2.1-3.fc40.x86_64 is already installed.
+Package gdb-16.2-1.fc40.x86_64 is already installed.
+Package make-1:4.4.1-6.fc40.x86_64 is already installed.
+Package git-2.49.0-1.fc40.x86_64 is already installed.
+Package ninja-build-1.12.1-1.fc40.x86_64 is already installed.
+Package gn-2234^20250502git487f8353f154-1.fc40.x86_64 is already installed.
+Package python-unversioned-command-3.12.10-2.fc40.noarch is already installed.
+Package cmake-3.30.8-1.fc40.x86_64 is already installed.
+Package llvm-18.1.8-4.fc40.x86_64 is already installed.
+Package clang-18.1.8-2.fc40.x86_64 is already installed.
+Package unzip-6.0-63.fc40.x86_64 is already installed.
+Package fontconfig-devel-2.15.0-6.fc40.x86_64 is already installed.
+Package mesa-libGL-devel-24.1.7-1.fc40.x86_64 is already installed.
+Package mesa-libGLU-devel-9.0.3-4.fc40.x86_64 is already installed.
+Package libglvnd-devel-1:1.7.0-4.fc40.x86_64 is already installed.
+Package mesa-libEGL-devel-24.1.7-1.fc40.x86_64 is already installed.
+Package vulkan-loader-devel-1.3.296.0-1.fc40.x86_64 is already installed.
 ```
 ## 2. Build Automatically with the Script (Recommended)
 This script automatically downloads the relevant source code and performs the build.

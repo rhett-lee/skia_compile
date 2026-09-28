@@ -23,20 +23,20 @@ sudo apt install -y gcc g++ gdb make git cmake python3 ninja-build wget unzip \
 ```
 The installed software versions are as follows:
 ```
-cmake 已经是最新版 (3.22.1.1-1)。
-g++ 已经是最新版 (4:8.3.0-1+sign)。
-gcc 已经是最新版 (4:8.3.0-1+sign)。
-gdb 已经是最新版 (8.2.1.1-1+security)。
-git 已经是最新版 (1:2.20.1.3-2+dde)。
-libfontconfig1-dev 已经是最新版 (2.13.1.1-2+sign)。
-make 已经是最新版 (4.2.1.1-1+dde)。
-ninja-build 已经是最新版 (1.8.2-1)。
-python3 已经是最新版 (3.7.3.1-deepin1)。
-unzip 已经是最新版 (6.0.7.2-1+deepin+sign)。
-libegl1-mesa-dev 已经是最新版 (23.1.2.3-1)。
-libgl1-mesa-dev 已经是最新版 (23.1.2.3-1)。
-libgles2-mesa-dev 已经是最新版 (23.1.2.3-1)。
-wget 已经是最新版 (1.20.1.6-deepin1)。
+cmake is already the newest version (3.22.1.1-1).
+g++ is already the newest version (4:8.3.0-1+sign).
+gcc is already the newest version (4:8.3.0-1+sign).
+gdb is already the newest version (8.2.1.1-1+security).
+git is already the newest version (1:2.20.1.3-2+dde).
+libfontconfig1-dev is already the newest version (2.13.1.1-2+sign).
+make is already the newest version (4.2.1.1-1+dde).
+ninja-build is already the newest version (1.8.2-1).
+python3 is already the newest version (3.7.3.1-deepin1).
+unzip is already the newest version (6.0.7.2-1+deepin+sign).
+libegl1-mesa-dev is already the newest version (23.1.2.3-1).
+libgl1-mesa-dev is already the newest version (23.1.2.3-1).
+libgles2-mesa-dev is already the newest version (23.1.2.3-1).
+wget is already the newest version (1.20.1.6-deepin1).
 ```
 Note: The download of libvulkan-dev failed and it was not installed successfully.
 

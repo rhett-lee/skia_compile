@@ -15,9 +15,9 @@ English | [简体中文](compile_skia_on_openeuler.md)
    - Upgrade the system: `sudo dnf update -y`
    - Install the UKUI desktop environment (you may also install another desktop environment; the method is similar. Refer to the OpenEuler community documentation for the supported desktop systems):
 ```
-sudo dnf install ukui                       #安装ukui界面环境
-sudo systemctl set-default graphical.target #设置为界面方式启动  
-sudo reboot                                 #重启系统
+sudo dnf install ukui                       # install the UKUI desktop environment
+sudo systemctl set-default graphical.target # set the system to boot into the graphical (desktop) target  
+sudo reboot                                 # reboot the system
 ```
 2. Install the required dependencies (identical to Fedora):
 ```

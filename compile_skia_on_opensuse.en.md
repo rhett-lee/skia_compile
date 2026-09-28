@@ -21,24 +21,24 @@ sudo zypper install -y gcc gcc-c++ gdb make git ninja gn python cmake \
 ```
 The installed software versions are as follows:
 ```
-没有 'gn-0.20250306-bp156.2.6.1.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'gcc-c++-7-3.9.1.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'cmake-3.28.3-150600.1.1.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'git-2.43.0-150600.3.9.1.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'gcc-7-3.9.1.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'make-4.2.1-7.3.2.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'gdb-14.2-150400.15.23.1.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'unzip-6.00-150000.4.14.1.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'ninja-1.10.0-1.24.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'python-2.7.18-150000.77.1.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'clang-17-bp156.1.1.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'fontconfig-devel-2.14.2-150600.1.3.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'Mesa-libGLESv3-devel-23.3.4-150600.83.3.1.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'llvm-17-bp156.1.1.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'vulkan-devel-1.3.275.0-150600.1.2.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'Mesa-libGL-devel-23.3.4-150600.83.3.1.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'Mesa-libEGL-devel-23.3.4-150600.83.3.1.x86_64' 的更新候选。已安装了可获取的最高版本。
-没有 'glu-devel-9.0.0-8.45.x86_64' 的更新候选。已安装了可获取的最高版本。
+No update candidate for 'gn-0.20250306-bp156.2.6.1.x86_64'. The highest available version is already installed.
+No update candidate for 'gcc-c++-7-3.9.1.x86_64'. The highest available version is already installed.
+No update candidate for 'cmake-3.28.3-150600.1.1.x86_64'. The highest available version is already installed.
+No update candidate for 'git-2.43.0-150600.3.9.1.x86_64'. The highest available version is already installed.
+No update candidate for 'gcc-7-3.9.1.x86_64'. The highest available version is already installed.
+No update candidate for 'make-4.2.1-7.3.2.x86_64'. The highest available version is already installed.
+No update candidate for 'gdb-14.2-150400.15.23.1.x86_64'. The highest available version is already installed.
+No update candidate for 'unzip-6.00-150000.4.14.1.x86_64'. The highest available version is already installed.
+No update candidate for 'ninja-1.10.0-1.24.x86_64'. The highest available version is already installed.
+No update candidate for 'python-2.7.18-150000.77.1.x86_64'. The highest available version is already installed.
+No update candidate for 'clang-17-bp156.1.1.x86_64'. The highest available version is already installed.
+No update candidate for 'fontconfig-devel-2.14.2-150600.1.3.x86_64'. The highest available version is already installed.
+No update candidate for 'Mesa-libGLESv3-devel-23.3.4-150600.83.3.1.x86_64'. The highest available version is already installed.
+No update candidate for 'llvm-17-bp156.1.1.x86_64'. The highest available version is already installed.
+No update candidate for 'vulkan-devel-1.3.275.0-150600.1.2.x86_64'. The highest available version is already installed.
+No update candidate for 'Mesa-libGL-devel-23.3.4-150600.83.3.1.x86_64'. The highest available version is already installed.
+No update candidate for 'Mesa-libEGL-devel-23.3.4-150600.83.3.1.x86_64'. The highest available version is already installed.
+No update candidate for 'glu-devel-9.0.0-8.45.x86_64'. The highest available version is already installed.
 ```
 ## 2. Build Automatically with the Script (Recommended)
 This script automatically downloads the relevant source code and performs the build.

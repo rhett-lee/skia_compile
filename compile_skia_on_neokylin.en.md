@@ -24,23 +24,23 @@ sudo apt install -y gcc g++ gdb make git ninja-build generate-ninja python3 cmak
 ```
 The installed software versions are as follows:
 ```
-make 已经是最新版 (4.3-4.1+nfs5)。
-g++ 已经是最新版 (4:10.2.1-1+nfs5)。
-gcc 已经是最新版 (4:10.2.1-1+nfs5)。
-python3 已经是最新版 (3.9.2-3+nfs5)。
-libfontconfig-dev 已经是最新版 (2.13.1-4.2+nfs5)。
-cmake 已经是最新版 (3.18.4-2+nfs5)。
-gdb 已经是最新版 (10.1-1.7+nfs5)。
-libegl1-mesa-dev 已经是最新版 (20.3.5-2+m4+5nfs5)。
-libgles2-mesa-dev 已经是最新版 (20.3.5-2+m4+5nfs5)。
-libgl1-mesa-dev 已经是最新版 (20.3.5-2+m4+5nfs5)。
-clang 已经是最新版 (1:11.0-51+nmu5)。
-generate-ninja 已经是最新版 (0.0~git20210128.09c9e5e-1)。
-libvulkan-dev 已经是最新版 (1.2.162.0-1)。
-llvm 已经是最新版 (1:11.0-51+nmu5)。
-ninja-build 已经是最新版 (1.10.1-1)。
-unzip 已经是最新版 (6.0-m19+1nfs5)。
-git 已经是最新版 (1:2.30.2-2+m4+0nfs5)。
+make is already the newest version (4.3-4.1+nfs5).
+g++ is already the newest version (4:10.2.1-1+nfs5).
+gcc is already the newest version (4:10.2.1-1+nfs5).
+python3 is already the newest version (3.9.2-3+nfs5).
+libfontconfig-dev is already the newest version (2.13.1-4.2+nfs5).
+cmake is already the newest version (3.18.4-2+nfs5).
+gdb is already the newest version (10.1-1.7+nfs5).
+libegl1-mesa-dev is already the newest version (20.3.5-2+m4+5nfs5).
+libgles2-mesa-dev is already the newest version (20.3.5-2+m4+5nfs5).
+libgl1-mesa-dev is already the newest version (20.3.5-2+m4+5nfs5).
+clang is already the newest version (1:11.0-51+nmu5).
+generate-ninja is already the newest version (0.0~git20210128.09c9e5e-1).
+libvulkan-dev is already the newest version (1.2.162.0-1).
+llvm is already the newest version (1:11.0-51+nmu5).
+ninja-build is already the newest version (1.10.1-1).
+unzip is already the newest version (6.0-m19+1nfs5).
+git is already the newest version (1:2.30.2-2+m4+0nfs5).
 ```
 ## 2. Build Automatically with the Script (Recommended)
 This script automatically downloads the relevant source code and performs the build.

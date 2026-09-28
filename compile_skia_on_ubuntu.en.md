@@ -23,23 +23,23 @@ sudo apt install -y gcc g++ gdb make git ninja-build generate-ninja python3 cmak
 ```
 The installed software versions are as follows:
 ```
-gcc 已经是最新版 (4:13.2.0-7ubuntu1)。
-g++ 已经是最新版 (4:13.2.0-7ubuntu1)。
-gdb 已经是最新版 (15.0.50.20240403-0ubuntu1)。
-make 已经是最新版 (4.3-4.1build2)。
-git 已经是最新版 (1:2.43.0-1ubuntu7.3)。
-ninja-build 已经是最新版 (1.11.1-2)。
-generate-ninja 已经是最新版 (0.0~git20240221.03d10f1-1)。
-python3 已经是最新版 (3.12.3-0ubuntu2)。
-cmake 已经是最新版 (3.28.3-1build7)。
-llvm 已经是最新版 (1:18.0-59~exp2)。
-clang 已经是最新版 (1:18.0-59~exp2)。
-unzip 已经是最新版 (6.0-28ubuntu4.1)。
-libfontconfig-dev 已经是最新版 (2.15.0-1.1ubuntu2)。
-libgl1-mesa-dev 已经是最新版 (25.0.7-0ubuntu0.24.04.2)。
-libgles2-mesa-dev 已经是最新版 (25.0.7-0ubuntu0.24.04.2)。
-libegl1-mesa-dev 已经是最新版 (25.0.7-0ubuntu0.24.04.2)。
-libvulkan-dev 已经是最新版 (1.3.275.0-1build1)。
+gcc is already the newest version (4:13.2.0-7ubuntu1).
+g++ is already the newest version (4:13.2.0-7ubuntu1).
+gdb is already the newest version (15.0.50.20240403-0ubuntu1).
+make is already the newest version (4.3-4.1build2).
+git is already the newest version (1:2.43.0-1ubuntu7.3).
+ninja-build is already the newest version (1.11.1-2).
+generate-ninja is already the newest version (0.0~git20240221.03d10f1-1).
+python3 is already the newest version (3.12.3-0ubuntu2).
+cmake is already the newest version (3.28.3-1build7).
+llvm is already the newest version (1:18.0-59~exp2).
+clang is already the newest version (1:18.0-59~exp2).
+unzip is already the newest version (6.0-28ubuntu4.1).
+libfontconfig-dev is already the newest version (2.15.0-1.1ubuntu2).
+libgl1-mesa-dev is already the newest version (25.0.7-0ubuntu0.24.04.2).
+libgles2-mesa-dev is already the newest version (25.0.7-0ubuntu0.24.04.2).
+libegl1-mesa-dev is already the newest version (25.0.7-0ubuntu0.24.04.2).
+libvulkan-dev is already the newest version (1.3.275.0-1build1).
 ```
 ## 2. Build Automatically with the Script (Recommended)
 This script automatically downloads the relevant source code and performs the build.
