@@ -7,19 +7,19 @@
 ## 文档列表
 | 文档名称                  | 操作系统 | 编译器      |内容简介 |
 | :---                      | :---     | :---        | :---    |
-| [Windows下编译skia.md](Windows%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | Windows  | LLVM+VS2022/VS2026<br>LLVM+VS2017/VS2019 |Windows系统中使用LLVM或Visual Studio 2022/2026编译Skia源码的方法（主分支）<br> 如果使用VS2017/VS2019，请使用develop-cpp17分支，主分支不支持VS2017/VS2019|
-| [mingw64_compile_skia.md](mingw64_compile_skia.md)                | Windows  | MinGW-W64(gcc/g++或LLVM) |Windows系统中使用MinGW-W64(gcc/g++或LLVM)编译Skia源码的方法|
-| [OpenEuler下编译skia.md](OpenEuler%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | OpenEuler  | LLVM/gcc |OpenEuler系统中使用LLVM或者gcc编译Skia源码的方法|
-| [Ubuntu下编译skia.md](Ubuntu%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | Ubuntu  | LLVM/gcc |Ubuntu系统中使用LLVM或者gcc编译Skia源码的方法|
-| [Debian下编译skia.md](Debian%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | Debian  | LLVM/gcc |Debian系统中使用LLVM或者gcc编译Skia源码的方法|
-| [Fedora下编译skia.md](Fedora%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | Fedora  | LLVM/gcc |Fedora系统中使用LLVM或者gcc编译Skia源码的方法|
-| [统信UOS下编译skia.md](%E7%BB%9F%E4%BF%A1UOS%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | UOS  | LLVM/gcc |统信UOS系统中使用LLVM或者gcc编译Skia源码的方法|
-| [中科方德下编译skia.md](%E4%B8%AD%E7%A7%91%E6%96%B9%E5%BE%B7%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | 中科方德  | LLVM/gcc |中科方德系统中使用LLVM或者gcc编译Skia源码的方法|
-| [UbuntuKylin下编译skia.md](UbuntuKylin%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | UbuntuKylin  | LLVM/gcc |UbuntuKylin系统中使用LLVM或者gcc编译Skia源码的方法|
-| [OpenKylin下编译skia.md](OpenKylin%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | OpenKylin  | LLVM/gcc |OpenKylin系统中使用LLVM或者gcc编译Skia源码的方法|
-| [OpenSuse下编译skia.md](OpenSuse%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | OpenSuse  | LLVM/gcc |OpenSuse系统中使用LLVM或者gcc编译Skia源码的方法|
-| [macOS下编译skia.md](macOS%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | macOS  | clang/clang++ |macOS系统中使用clang/clang++编译Skia源码的方法|
-| [FreeBSD下编译skia.md](FreeBSD%E4%B8%8B%E7%BC%96%E8%AF%91skia.md) | FreeBSD  | clang/clang++ |FreeBSD系统中使用clang/clang++编译Skia源码的方法|
+| [compile_skia_on_windows.md](compile_skia_on_windows.md) | Windows  | LLVM+VS2022/VS2026<br>LLVM+VS2017/VS2019 |Windows系统中使用LLVM或Visual Studio 2022/2026编译Skia源码的方法（主分支）<br> 如果使用VS2017/VS2019，请使用develop-cpp17分支，主分支不支持VS2017/VS2019|
+| [compile_skia_on_windows_mingw64.md](compile_skia_on_windows_mingw64.md)                | Windows  | MinGW-W64(gcc/g++或LLVM) |Windows系统中使用MinGW-W64(gcc/g++或LLVM)编译Skia源码的方法|
+| [compile_skia_on_openeuler.md](compile_skia_on_openeuler.md) | OpenEuler  | LLVM/gcc |OpenEuler系统中使用LLVM或者gcc编译Skia源码的方法|
+| [compile_skia_on_ubuntu.md](compile_skia_on_ubuntu.md) | Ubuntu  | LLVM/gcc |Ubuntu系统中使用LLVM或者gcc编译Skia源码的方法|
+| [compile_skia_on_debian.md](compile_skia_on_debian.md) | Debian  | LLVM/gcc |Debian系统中使用LLVM或者gcc编译Skia源码的方法|
+| [compile_skia_on_fedora.md](compile_skia_on_fedora.md) | Fedora  | LLVM/gcc |Fedora系统中使用LLVM或者gcc编译Skia源码的方法|
+| [compile_skia_on_uos.md](compile_skia_on_uos.md) | UOS  | LLVM/gcc |统信UOS系统中使用LLVM或者gcc编译Skia源码的方法|
+| [compile_skia_on_neokylin.md](compile_skia_on_neokylin.md) | 中科方德  | LLVM/gcc |中科方德系统中使用LLVM或者gcc编译Skia源码的方法|
+| [compile_skia_on_ubuntukylin.md](compile_skia_on_ubuntukylin.md) | UbuntuKylin  | LLVM/gcc |UbuntuKylin系统中使用LLVM或者gcc编译Skia源码的方法|
+| [compile_skia_on_openkylin.md](compile_skia_on_openkylin.md) | OpenKylin  | LLVM/gcc |OpenKylin系统中使用LLVM或者gcc编译Skia源码的方法|
+| [compile_skia_on_opensuse.md](compile_skia_on_opensuse.md) | OpenSuse  | LLVM/gcc |OpenSuse系统中使用LLVM或者gcc编译Skia源码的方法|
+| [compile_skia_on_macos.md](compile_skia_on_macos.md) | macOS  | clang/clang++ |macOS系统中使用clang/clang++编译Skia源码的方法|
+| [compile_skia_on_freebsd.md](compile_skia_on_freebsd.md) | FreeBSD  | clang/clang++ |FreeBSD系统中使用clang/clang++编译Skia源码的方法|
 
 ## 资源链接
 1. nim_duilib界面库，点击访问：[nim_duilib](https://github.com/rhett-lee/nim_duilib) 
