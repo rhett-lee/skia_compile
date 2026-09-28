@@ -14,31 +14,50 @@ English | [简体中文](compile_skia_on_windows_mingw64.md)
 
 ## 1. Prerequisites: Install Required Software
 
-1. Install Python v3.11.x (if Python v3 is already installed on your machine, you can skip this step)     
-   (The Python major version must be v3, and it must be added to the Path environment variable so that `python.exe` can be launched directly)     
-   (1) First, install Python.     
-   (2) In Windows Settings, turn off the "App execution aliases" for `python.exe` and `python3.exe`; otherwise the Skia build script will have problems. Windows Settings path: Settings -> Apps -> Advanced app settings -> App execution aliases.     
-   (3) Go to the directory where `python.exe` is located, make a copy of `python.exe` and rename it to `python3.exe`, so that `python3.exe` can be invoked from the command line.     
+1. Install Python v3.11.x (if Python v3 is already installed on your machine, you can skip this step)
+     
+   (The Python major version must be v3, and it must be added to the Path environment variable so that `python.exe` can be launched directly)
+     
+   (1) First, install Python.
+     
+   (2) In Windows Settings, turn off the "App execution aliases" for `python.exe` and `python3.exe`; otherwise the Skia build script will have problems. Windows Settings path: Settings -> Apps -> Advanced app settings -> App execution aliases.
+     
+   (3) Go to the directory where `python.exe` is located, make a copy of `python.exe` and rename it to `python3.exe`, so that `python3.exe` can be invoked from the command line.
+     
    (4) Verify: ensure `python.exe` and `python3.exe` can be invoked from the command line.
-2. Install git (if git is already installed on your machine, you can skip this step)     
-   (git must be added to the Path environment variable so that `git.exe` can be invoked from the command line)     
-   (1) Git For Windows: version 2.44     
+2. Install git (if git is already installed on your machine, you can skip this step)
+     
+   (git must be added to the Path environment variable so that `git.exe` can be invoked from the command line)
+     
+   (1) Git For Windows: version 2.44
+     
    (2) TortoiseGit: version 2.15
-3. Obtain the MinGW-w64 build environment (if MinGW-w64 is already installed on your machine, you can skip this step)     
-   (1) Download page: <https://www.mingw-w64.org/downloads/>     
-   (2) mingw64 LLVM (recommended)     
-   Download page: <https://github.com/mstorsjo/llvm-mingw/releases>     
-   Download link: <https://github.com/mstorsjo/llvm-mingw/releases/download/20250430/llvm-mingw-20250430-ucrt-x86_64.zip>     
-   After downloading, extract to the directory `C:/mingw64`; the final gcc/g++ directory is `C:/mingw64/llvm-mingw-20250430-ucrt-x86_64/bin`     
-   (3) mingw64 gcc/g++     
-   Download page: <https://github.com/niXman/mingw-builds-binaries/releases>     
-   Download link: <https://github.com/niXman/mingw-builds-binaries/releases/download/15.1.0-rt_v12-rev0/x86_64-15.1.0-release-win32-seh-ucrt-rt_v12-rev0.7z>     
+3. Obtain the MinGW-w64 build environment (if MinGW-w64 is already installed on your machine, you can skip this step)
+     
+   (1) Download page: <https://www.mingw-w64.org/downloads/>
+     
+   (2) mingw64 LLVM (recommended)
+     
+   Download page: <https://github.com/mstorsjo/llvm-mingw/releases>
+     
+   Download link: <https://github.com/mstorsjo/llvm-mingw/releases/download/20250430/llvm-mingw-20250430-ucrt-x86_64.zip>
+     
+   After downloading, extract to the directory `C:/mingw64`; the final gcc/g++ directory is `C:/mingw64/llvm-mingw-20250430-ucrt-x86_64/bin`
+     
+   (3) mingw64 gcc/g++
+     
+   Download page: <https://github.com/niXman/mingw-builds-binaries/releases>
+     
+   Download link: <https://github.com/niXman/mingw-builds-binaries/releases/download/15.1.0-rt_v12-rev0/x86_64-15.1.0-release-win32-seh-ucrt-rt_v12-rev0.7z>
+     
    After downloading, extract to the directory `C:/mingw64`; the final gcc/g++ directory is `C:/mingw64/x86_64-15.1.0-release-win32-seh-ucrt-rt_v12-rev0/mingw64/bin`
 
 ## 2. Build Automatically with the Script (Recommended)
 
-This script automatically downloads the relevant source code and performs the build.  
-Choose a working directory, create a script named `build.bat`, copy the prepared script below into it, and save the file.  
+This script automatically downloads the relevant source code and performs the build.
+  
+Choose a working directory, create a script named `build.bat`, copy the prepared script below into it, and save the file.
+  
 The script content is as follows:
 
 ```
@@ -70,32 +89,45 @@ Finally, run the script:
 .\build.bat
 ```
 
-If fetching the skia_compile code fails during the build, you can retry a few times.  
+If fetching the skia_compile code fails during the build, you can retry a few times.
+  
 The compiled library files are located in the `skia/out` subdirectory of the working directory, organized into the corresponding subfolders according to the build options.
 
 ## 3. Manual Build Process
 
 ### Step 1: Obtain the Skia source code and the modified source code
 
-1. Get the Skia source code:     
-   (1) `> mkdir D:/develop`     
-   (2) `> cd /d D:/develop`     
-   (3) `> git clone https://github.com/google/skia.git`     
+1. Get the Skia source code:
+     
+   (1) `> mkdir D:/develop`
+     
+   (2) `> cd /d D:/develop`
+     
+   (3) `> git clone https://github.com/google/skia.git`
+     
    (4) `> git checkout 6f559bafbed4c8323a899df4008aa073df4eccc6`
-2. Apply the modified code:     
-   (1) `> cd /d D:/develop`     
-   (2) `> git clone https://github.com/rhett-lee/skia_compile` (downloads the source code and documents)     
-   (3) Extract `skia.2026-09-16.src.zip` into the directory `skia.2026-09-16.src`     
-   (4) Copy all the contents of the directory `skia.2026-09-16.src` into the `D:/develop/skia` directory, overwriting all files with the same name     
+2. Apply the modified code:
+     
+   (1) `> cd /d D:/develop`
+     
+   (2) `> git clone https://github.com/rhett-lee/skia_compile` (downloads the source code and documents)
+     
+   (3) Extract `skia.2026-09-16.src.zip` into the directory `skia.2026-09-16.src`
+     
+   (4) Copy all the contents of the directory `skia.2026-09-16.src` into the `D:/develop/skia` directory, overwriting all files with the same name
+     
    (5) Note: the SHA-1 of the modified code must be compared. If it is not this version of the code, overwriting directly may cause problems.
 
 ### Step 2: Build Skia (Compiler: mingw64 LLVM) (Recommended)
 
 1. Run the cmd.exe command-line environment.
-2. Set the PATH environment variable:     
-   `> `SET PATH=%PATH%;C:\mingw64\llvm-mingw-20250430-ucrt-x86_64\bin\`\`     
+2. Set the PATH environment variable:
+     
+   `> `SET PATH=%PATH%;C:\mingw64\llvm-mingw-20250430-ucrt-x86_64\bin\`\`
+     
    `> clang++ -v`
-3. Enter the Skia source directory:     
+3. Enter the Skia source directory:
+     
    `> cd /d D:/develop/skia`
 4. Build the Skia static library (mingw64 LLVM, x64)
 
@@ -110,9 +142,11 @@ The compiled library files are located in the `skia/out` subdirectory of the wor
 ### Step 2: Build Skia (Compiler: mingw64 gcc/g++)
 
 1. Run the cmd.exe command-line environment.
-2. Set the PATH environment variable:     
+2. Set the PATH environment variable:
+     
    `> `SET PATH=%PATH%;C:\mingw64\llvm-mingw-20250430-ucrt-x86_64\bin`    `` `> g++ -v\`
-3. Enter the Skia source directory:     
+3. Enter the Skia source directory:
+     
    `> cd /d D:/develop/skia`
 4. Build the Skia static library (mingw64 gcc/g++, x64)
 
@@ -127,5 +161,6 @@ The compiled library files are located in the `skia/out` subdirectory of the wor
 ## 4. Resource Links
 
 1. Skia build documentation repository - for the latest documentation, please visit: [skia\_compile](https://github.com/rhett-lee/skia_compile)
-2. nim_duilib GUI library code repository, please visit: [nim\_duilib](https://github.com/rhett-lee/nim_duilib)     
-   nim_duilib is a cross-platform GUI library developed in C++, derived from the classic duilib UI library and deeply optimized and extended. It supports Windows/Linux/macOS/FreeBSD; the supported Linux distributions include OpenEuler, OpenKylin, UbuntuKylin, UOS, NeoKylin, Ubuntu, Fedora, Debian, and others. It focuses on simplifying efficient desktop application development. Its design incorporates the DirectUI philosophy, using XML to describe the UI layout and separating visuals from logic, which significantly improves development flexibility and maintainability.
+2. nim_duilib GUI library code repository, please visit: [nim\_duilib](https://github.com/rhett-lee/nim_duilib)
+     
+   nim_duilib is a cross-platform GUI library developed in C++, derived from the classic duilib GUI library and deeply optimized and extended. It supports Windows/Linux/macOS/FreeBSD; the supported Linux distributions include OpenEuler, OpenKylin, UbuntuKylin, UOS, NeoKylin, Ubuntu, Fedora, Debian, and others. It focuses on simplifying efficient desktop application development. Its design incorporates the DirectUI philosophy, using XML to describe the UI layout and separating visuals from logic, which significantly improves development flexibility and maintainability.

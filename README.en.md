@@ -1,5 +1,7 @@
 English | [简体中文](README.md)
 
+> Last synced: 2026-09-28
+
 # skia_compile
 
 [skia\_compile](https://github.com/rhett-lee/skia_compile) is a documentation repository that explains how to build Skia from source on various platforms. The build methods described here are intended to support the [nim\_duilib](https://github.com/rhett-lee/nim_duilib) project's use of the Skia library; if you use them with other libraries, you may need to adjust the build arguments.
