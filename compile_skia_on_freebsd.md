@@ -1,3 +1,5 @@
+简体中文 | [English](compile_skia_on_freebsd.en.md)
+
 # FreeBSD系统中使用clang/clang++编译Skia源码的方法
  - 修改日期：2026-09-16
  - 操作系统：FreeBSD

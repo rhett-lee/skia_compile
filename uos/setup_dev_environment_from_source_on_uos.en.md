@@ -1,18 +1,20 @@
-简体中文 | [English](setup_dev_environment_from_source_on_uos.en.md)
+English | [简体中文](setup_dev_environment_from_source_on_uos.md)
 
-# 统信UOS系统中手动从源码编译安装开发环境
- - 修改日期：2025-05-25
- - 操作系统：统信UOS桌面专业版AMD64（1070 HWE版本）
+Last synced: 2026-09-28
 
-## 一、准备工作：安装必备的软件
-1. 安装完成系统后，可用升级系统到最新：    
-（1）升级系统：`sudo apt update`    
-（2）升级系统：`sudo apt upgrade -y`   
-2. 安装依赖的软件
+# Manually Compiling and Installing the Development Environment from Source on UOS
+ - Last updated: 2025-05-25
+ - Operating system: UOS Desktop Professional AMD64 (1070 HWE edition)
+
+## 1. Preparation: Install Required Software
+1. After installing the system, you can upgrade it to the latest:
+   (1) Upgrade the system: `sudo apt update`
+   (2) Upgrade the system: `sudo apt upgrade -y`
+2. Install the required software
 ```
 sudo apt install -y gcc g++ gdb make git cmake python3 ninja-build wget unzip
 ```
-安装完成后的各个软件版本信息如下：
+The installed software versions are as follows:
 ```
 cmake 已经是最新版 (3.22.1.1-1)。
 g++ 已经是最新版 (4:8.3.0-1+sign)。
@@ -25,13 +27,13 @@ python3 已经是最新版 (3.7.3.1-deepin1)。
 unzip 已经是最新版 (6.0.7.2-1+deepin+sign)。
 wget 已经是最新版 (1.20.1.6-deepin1)。
 ```
-说明：系统默认提供的开发工具软件版本太低，当不能满足要求时，需要使用源码编译开发工具的最新版，包括binutils、python3、gcc/g++、llvm/clang/clang++、gn等。    
+Note: the development tool versions provided by the system by default are too old. When they cannot meet requirements, you must build the latest versions of the development tools from source, including binutils, python3, gcc/g++, llvm/clang/clang++, gn, and so on.
 
-# 二、手工从源码编译安装开发环境
-最低内存需求：16GB，内存不足时编译失败    
-硬盘空间需求：35GB左右    
+# 2. Manually Compile and Install the Development Environment from Source
+Minimum memory requirement: 16 GB; the build fails if memory is insufficient.
+Disk space requirement: around 35 GB.
 
-1. 编译安装最新版本的binutils（因系统自带的版本较低，使用ld/gold链接gcc/g++/llvm/clang/clang++的时候，会遇到错误）      
+1. Compile and install the latest binutils (the system-bundled version is too old; linking gcc/g++/llvm/clang/clang++ with ld/gold causes errors)
 ```
 #!/bin/bash
 cd ~/develop; mkdir src                                  #创建源码目录
@@ -44,9 +46,8 @@ cd binutils-2.43.1                                           #进入源码目录
 make                                                         #编译
 make install                                                 #安装
 
-``` 
-
-2. 从源码编译安装python3的较新版本（3.13.0），因系统自带的版本(3.7.3)太低，无法编译llvm，所以必须升级    
+```
+2. Compile and install a newer python3 (3.13.0) from source, because the system-bundled version (3.7.3) is too old to compile llvm and must be upgraded
 ```
 #!/bin/bash
 cd ~/develop/src                                                #设置工作目录
@@ -57,8 +58,7 @@ cd Python-3.13.0                                                    #进入源�
 make                                                                #编译
 make install                                                        #安装, 会遇到错误，但不影响。
 ```
-
-3. 从源码编译安装gcc/g++ 的较新版本（14.2.0），因系统自带的版本太低，必须升级   
+3. Compile and install a newer gcc/g++ (14.2.0) from source, because the system-bundled version is too old and must be upgraded
 ```
 #!/bin/bash
 # 编译资源需求：4GB内存，磁盘空间：12GB
@@ -79,9 +79,8 @@ export LD="~/develop/install/binutils-2.43.1/bin/ld"
   
 make -j 12                                                      #编译：多进程编译，编译参数可参考电脑实际有几个核心
 make install                                     #安装，安装目录为：~/develop/install/gcc-14.2.0
-``` 
-
-编译安装完成后，设置环境变量，以使新版gcc/g++可用（将下列内容放在/home/develop/source.sh文件中，便于使用:`source ~/develop/source.sh`）：    
+```
+After compilation and installation, set the environment variables so the new gcc/g++ become available (put the following content in the `/home/develop/source.sh` file for convenience; use it with: `source ~/develop/source.sh`):
 ```
 #!/bin/bash
 # python3 
@@ -95,8 +94,8 @@ export PATH=~/develop/install/gcc-14.2.0/bin/:$PATH
 export LD_LIBRARY_PATH=~/develop/install/gcc-14.2.0/lib64/:$LD_LIBRARY_PATH
 export C_INCLUDE_PATH=~/develop/install/gcc-14.2.0/include/c++/14.2.0/:~/develop/install/gcc-14.2.0/include/c++/14.2.0/x86_64-pc-linux-gnu/:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=~/develop/install/gcc-14.2.0/include/c++/14.2.0/:~/develop/install/gcc-14.2.0/include/c++/14.2.0/x86_64-pc-linux-gnu/:$CPLUS_INCLUDE_PATH
-```    
-4. 从源码编译安装llvm/clang/clang++的较新版本（19.1.3），因系统自带的版本太低，必须升级    
+```
+4. Compile and install a newer llvm/clang/clang++ (19.1.3) from source, because the system-bundled version is too old and must be upgraded
 ```
 #!/bin/bash
 #编译资源需求：16GB内存
@@ -118,8 +117,7 @@ ninja -C ./llvm-project-llvmorg-19.1.3.build                                    
 ninja -C ./llvm-project-llvmorg-19.1.3.build install           #安装，安装目录为:~/develop/install/LLVM-19.1.3
 
 ```
-
-设置环境变量，以使新版llvm/clang/clang++可用（将下列内容放在/home/develop/source.sh文件中，便于使用:`source ~/develop/source.sh`）：    
+Set the environment variables so the new llvm/clang/clang++ become available (put the following content in the `/home/develop/source.sh` file for convenience; use it with: `source ~/develop/source.sh`):
 ```
 #!/bin/bash
 # python3 
@@ -139,8 +137,8 @@ export PATH=~/develop/install/LLVM-19.1.3/bin/:$PATH
 export LD_LIBRARY_PATH=~/develop/install/LLVM-19.1.3/lib/:$LD_LIBRARY_PATH
 export C_INCLUDE_PATH=~/develop/install/LLVM-19.1.3/include/:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=~/develop/install/LLVM-19.1.3/include/:$CPLUS_INCLUDE_PATH
-```    
-5. 从源码编译安装gn（没找到系统自带的，所以从源码编译）：    
+```
+5. Compile and install gn from source (no system-bundled gn was found, so build it from source):
 ```
 #!/bin/bash
 cd ~/develop/src                            #设置工作目录
@@ -149,9 +147,8 @@ cd ~/develop/src/gn                         #进入源码目录
 source ~/develop/source.sh                  #使用gcc/g++最新版
 export CXX=g++; python3 build/gen.py            #生成编译配置
 ninja -C out                                    #编译源码
-```    
-
-设置环境变量，以使gn可用（将下列内容放在/home/develop/source.sh文件中，便于使用:`source ~/develop/source.sh`）：    
+```
+Set the environment variables so gn becomes available (put the following content in the `/home/develop/source.sh` file for convenience; use it with: `source ~/develop/source.sh`):
 ```
 #!/bin/bash
 # python3 
@@ -174,8 +171,7 @@ export CPLUS_INCLUDE_PATH=~/develop/install/LLVM-19.1.3/include/:$CPLUS_INCLUDE_
 
 # gn
 export PATH=~/develop/src/gn/out/:$PATH
-```    
-
-## 三、资源链接
-1. Skia的编译文档库，点击访问：[skia_compile](https://github.com/rhett-lee/skia_compile) 
-2. nim_duilib的代码库，点击访问：[nim_duilib](https://github.com/rhett-lee/nim_duilib) 
+```
+## 3. Resource Links
+1. Skia compilation documentation repository, click to visit: [skia_compile](https://github.com/rhett-lee/skia_compile)
+2. nim_duilib code repository, click to visit: [nim_duilib](https://github.com/rhett-lee/nim_duilib)
