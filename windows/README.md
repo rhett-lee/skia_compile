@@ -1,3 +1,5 @@
+简体中文 | [English](README.en.md)
+
 # 该目录中的文件说明
 ## 编译Skia的脚本（一键完成）
 ### `build_skia_all_in_one.bat` 文件的用法    

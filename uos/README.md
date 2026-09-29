@@ -1,3 +1,5 @@
+简体中文 | [English](README.en.md)
+
 ## UOS开发工具软件的源码下载、编译与安装（一键完成）
 由于UOS系统提供的开发工具软件版本太低，不能满足要求，需要使用源码编译开发工具的最新版。    
 这些开发工具包括binutils、python3、gcc/g++、llvm/clang/clang++、gn等。  
