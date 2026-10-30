@@ -1,6 +1,6 @@
 English | [简体中文](build_gcc_manually.md)
 
-Last synced: 2026-09-28
+Last synced: 2026-10-30
 
 # How to Compile gcc Manually
 When the system's bundled gcc/g++ version is too old and does not support C++20, you can compile the latest gcc/g++ from source manually.

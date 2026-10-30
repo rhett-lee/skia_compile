@@ -1,10 +1,10 @@
 English | [简体中文](compile_skia_on_windows_mingw64.md)
 
-> Last synced: 2026-09-28
+> Last synced: 2026-10-30
 
 # How to Build Skia from Source on Windows Using MinGW-W64 (gcc/g++ or LLVM)
 
-- Last updated: 2026-09-16
+- Last updated: 2026-10-30
 - Operating system: Windows 11 64-bit
 - Compiler: MinGW-W64 gcc/g++ or LLVM-MinGW
 - Note 1: This document describes how to build Skia from source on Windows using MinGW-W64 (gcc/g++) or LLVM-MinGW.
@@ -105,16 +105,16 @@ The compiled library files are located in the `skia/out` subdirectory of the wor
      
    (3) `> git clone https://github.com/google/skia.git`    
      
-   (4) `> git checkout 6f559bafbed4c8323a899df4008aa073df4eccc6`       
+   (4) `> git checkout e46ba84356043800523c401eaec9ecfd5cb67539`       
 2. Apply the modified code:    
     
    (1) `> cd /d D:/develop`
      
    (2) `> git clone https://github.com/rhett-lee/skia_compile` (downloads the source code and documents)    
      
-   (3) Extract `skia.2026-09-16.src.zip` into the directory `skia.2026-09-16.src`    
+   (3) Extract `skia.2026-10-30.src.zip` into the directory `skia.2026-10-30.src`    
      
-   (4) Copy all the contents of the directory `skia.2026-09-16.src` into the `D:/develop/skia` directory, overwriting all files with the same name    
+   (4) Copy all the contents of the directory `skia.2026-10-30.src` into the `D:/develop/skia` directory, overwriting all files with the same name    
      
    (5) Note: the SHA-1 of the modified code must be compared. If it is not this version of the code, overwriting directly may cause problems.    
 

@@ -1,6 +1,6 @@
 English | [简体中文](setup_dev_environment_from_source_on_uos.md)
 
-Last synced: 2026-09-28
+Last synced: 2026-10-30
 
 # Manually Compiling and Installing the Development Environment from Source on UOS
  - Last updated: 2025-05-25

@@ -1,6 +1,6 @@
 English | [简体中文](README.md)
 
-Last synced: 2026-09-28
+Last synced: 2026-10-30
 
 ## Build Skia with a Script (All-in-One)
 Pick a working directory, create a script `build.sh`, copy the prepared script below into it, and save the file.    

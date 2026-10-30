@@ -1,6 +1,6 @@
 English | [简体中文](README.md)
 
-Last synced: 2026-09-28
+Last synced: 2026-10-30
 
 ## Downloading, Compiling, and Installing UOS Development Tools (All-in-One)
 The development tools shipped with the UOS system are too old to meet requirements, so the latest versions must be built from source.    

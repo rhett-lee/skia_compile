@@ -1,9 +1,9 @@
 English | [简体中文](compile_skia_on_freebsd.md)
 
-> Last synced: 2026-09-28
+> Last synced: 2026-10-30
 
 # How to Build Skia from Source on FreeBSD Using clang/clang++
-- Last updated: 2026-09-28
+- Last updated: 2026-10-30
 - Operating system: FreeBSD
 - Compiler: clang/clang++
 - Note 1: This document describes how to build Skia from source on FreeBSD using clang/clang++.
@@ -40,14 +40,14 @@ The compiled library files are located in the `skia/out` subdirectory of the wor
 #!/usr/bin/env bash
 cd ~/develop
 git clone https://github.com/google/skia.git
-git -C ./skia checkout 6f559bafbed4c8323a899df4008aa073df4eccc6
+git -C ./skia checkout e46ba84356043800523c401eaec9ecfd5cb67539
 ```
 2. Download the source code and documents, and apply the modified Skia code:    
 ```
 #!/usr/bin/env bash
 cd ~/develop
 git clone https://github.com/rhett-lee/skia_compile
-unzip -o ./skia_compile/skia.2026-09-16.src.zip -d ./skia/
+unzip -o ./skia_compile/skia.2026-10-30.src.zip -d ./skia/
 ```
 After the update, you can verify in the skia directory whether the update was applied successfully.
 ```

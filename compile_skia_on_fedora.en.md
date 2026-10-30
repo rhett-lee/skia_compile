@@ -1,9 +1,9 @@
 English | [简体中文](compile_skia_on_fedora.md)
 
-> Last synced: 2026-09-28
+> Last synced: 2026-10-30
 
 # How to Build Skia from Source on Fedora Using LLVM or gcc
-- Last updated: 2026-09-28
+- Last updated: 2026-10-30
 - Operating system: Fedora Linux 40 (Workstation Edition) (desktop environment: GNOME Wayland)
 - Compiler: LLVM or gcc
 - Note 1: This document describes how to build Skia from source on Fedora using LLVM or gcc.
@@ -68,14 +68,14 @@ The compiled library files are located in the `skia/out` subdirectory of the wor
 mkdir ~/develop  
 cd ~/develop
 git clone https://github.com/google/skia.git
-git -C ./skia checkout 6f559bafbed4c8323a899df4008aa073df4eccc6
+git -C ./skia checkout e46ba84356043800523c401eaec9ecfd5cb67539
 ```
 2. Download the source code and documents, and apply the modified Skia code:    
 ```
 #!/bin/bash
 cd ~/develop
 git clone https://github.com/rhett-lee/skia_compile
-unzip -o ./skia_compile/skia.2026-09-16.src.zip -d ./skia/
+unzip -o ./skia_compile/skia.2026-10-30.src.zip -d ./skia/
 ```
 After the update, you can verify in the skia directory whether the update was applied successfully.
 ```

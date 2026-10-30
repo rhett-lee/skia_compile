@@ -1,7 +1,7 @@
 简体中文 | [English](compile_skia_on_freebsd.en.md)
 
 # FreeBSD系统中使用clang/clang++编译Skia源码的方法
- - 修改日期：2026-09-16
+ - 修改日期：2026-10-30
  - 操作系统：FreeBSD
  - 编译器：clang/clang++
  - 说明1：本文档介绍FreeBSD系统中使用clang/clang++编译Skia源码的方法
@@ -40,14 +40,14 @@ chmod +x ./skia_compile/freebsd/build_skia_all_in_one.sh
 #!/usr/bin/env bash
 cd ~/develop
 git clone https://github.com/google/skia.git
-git -C ./skia checkout 6f559bafbed4c8323a899df4008aa073df4eccc6
+git -C ./skia checkout e46ba84356043800523c401eaec9ecfd5cb67539
 ```
 2. 下载源码和文档，并更新skia的修改代码：    
 ```
 #!/usr/bin/env bash
 cd ~/develop
 git clone https://github.com/rhett-lee/skia_compile
-unzip -o ./skia_compile/skia.2026-09-16.src.zip -d ./skia/
+unzip -o ./skia_compile/skia.2026-10-30.src.zip -d ./skia/
 ``` 
 更新完成后，可以到skia目录中确认一下是否更新成功
 ```
